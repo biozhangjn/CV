@@ -5,16 +5,24 @@ This repo contains the source-code and results of my CV built with the [pagedown
 The main files are:
 
 - `index.Rmd`: Source template for the cv, contains a variable `PDF_EXPORT` in the header that changes styles for pdf vs html. 
-- `index.html`: The final output of the template when the header variable `PDF_EXPORT` is set to `FALSE`. View it at [guangchuangyu.github.io/cv](http://guangchuangyu.github.io/cv).
-- `ygc.pdf`: The final exported pdf. 
+- `index.html`: The final output of the template when the header variable `PDF_EXPORT` is set to `FALSE`. View it at [biozhangjn.github.io/cv](http://biozhangjn.github.io/cv).
+- `Jiannan Zhang’s CV.pdf`: The final exported pdf. 
 - `positions.csv`: A csv with columns encoding the various fields needed for a position entry in the CV. A column `section` is also available so different sections know which rows to use.
-- `profile.json` and `citation.json`: Citation stats from Google Scholar queried by [scholar](https://cran.r-project.org/package=scholar) package.
-- `citation.R`: Source code to generated `profile.json` and `citation.json`, as well as citation trend figure, `citation.png`.
+- add `order` column in `positions.csv` to adjust item order.
+- remove `time` if it is identical to previous item.
 
+The source code was derived from https://github.com/nstrayer/cv and https://github.com/GuangchuangYu/cv, with modifications:
 
+Inside the styles.css
 
-The source code was derived from <https://github.com/nstrayer/cv>, with modifications:
+```
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
 
-+ add `order` column in `positions.csv` to adjust item order.
-+ remove `time` if it is identical to previous item.
-+ add citation stats.
+This trunk is to make only the first page has a side-bar and the rest of the page fill in the whole page.
+see https://community.rstudio.com/t/pagedown-html-resume-with-aside-on-first-page-only/46351
