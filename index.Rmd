@@ -214,6 +214,7 @@ Dry-lab
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
 Last updated on `r Sys.Date()`.
 
@@ -233,8 +234,6 @@ cat(sanitize_links(intro_text))
 ```
 
 I am broadly interested in Avian Physiology, Endocrinology and Metabolism, and Transgenesis in chicken.
-
-
 
 
 Research Experience {data-icon=laptop}
